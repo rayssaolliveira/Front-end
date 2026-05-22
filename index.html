@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="author"
+          content="Rayssa de Oliveira">
+
+    <meta name="description"
+          content="Confeitaria artesanal Doces Sonhos">
+
+    <title>Doces Sonhos</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-color: #f6f3f1;
+            color: #2b2b2b;
+        }
+
+        img{
+            max-width: 100%;
+            display: block;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header{
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .header-content{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+
+        .logo img{
+            width: 155px;
+            transition: 0.3s ease;
+        }
+
+        .logo img:hover{
+            transform: scale(1.03);
+        }
+
+        /* MENU */
+
+        .menu{
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .menu a{
+            color: #5a2c2c;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            transition: 0.3s ease;
+        }
+
+        .menu a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #8B3A3A;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover::after{
+            width: 100%;
+        }
+
+        .menu-mobile{
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-mobile span{
+            width: 28px;
+            height: 3px;
+            background-color: #5a2c2c;
+            border-radius: 10px;
+        }
+
+        .hero{
+            padding: 70px 0;
+        }
+
+        .hero-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text h1{
+            font-size: 52px;
+            line-height: 1.1;
+            color: #4a1f1f;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p{
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons{
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn{
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary{
+            background-color: #8B3A3A;
+            color: white;
+        }
+
+        .btn-primary:hover{
+            background-color: #6f2d2d;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary{
+            border: 2px solid #8B3A3A;
+            color: #8B3A3A;
+        }
+
+        .btn-secondary:hover{
+            background-color: #8B3A3A;
+            color: white;
+        }
+
+        .hero-video video{
+            width: 100%;
+            border-radius: 22px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+        }
+
+        .frase{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Produtos */
+
+        .produtos{
+            padding: 90px 0;
+        }
+
+        .section-title{
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 40px;
+            color: #4a1f1f;
+        }
+
+        .section-subtitle{
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .container-produtos{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .produto{
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: 0.3s ease;
+        }
+
+        .produto:hover{
+            transform: translateY(-8px);
+        }
+
+        .produto img{
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .produto-info{
+            padding: 22px;
+        }
+
+        .produto-nome{
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .produto-descricao{
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .produto-footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .produto-preco{
+            font-size: 24px;
+            font-weight: 700;
+            color: #8B3A3A;
+        }
+
+        .btn-comprar{
+            padding: 10px 20px;
+            background-color: #8B3A3A;
+            color: white;
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+
+        .btn-comprar:hover{
+            background-color: #6f2d2d;
+        }
+
+        /* HISTÓRIA */
+
+        .historia{
+            padding: 90px 0;
+            background-color: white;
+        }
+
+        .historia-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .historia-texto h2{
+            font-size: 38px;
+            color: #4a1f1f;
+            margin-bottom: 25px;
+        }
+
+        .historia-texto p{
+            line-height: 1.9;
+            text-align: justify;
+            color: #555;
+        }
+
+        .historia-imagem img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* FOOTER */
+
+        footer{
+            background-color: #2e1b1b;
+            color: white;
+            padding: 50px 20px 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-box h3,
+        .footer-box h4{
+            margin-bottom: 15px;
+        }
+
+        .footer-box p,
+        .footer-box a{
+            color: #d8d8d8;
+            line-height: 1.8;
+        }
+
+        .footer-bottom{
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bcbcbc;
+            font-size: 14px;
+        }
+
+
+        /* Responsividade */
+
+        @media(max-width: 900px){
+
+            .hero-content,
+            .historia-content{
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text{
+                text-align: center;
+            }
+
+            .hero-buttons{
+                justify-content: center;
+            }
+
+            .hero-text h1{
+                font-size: 40px;
+            }
+
+            .historia-texto h2{
+                text-align: center;
+            }
+        }
+
+        @media(max-width: 768px){
+
+            .menu{
+                position: absolute;
+                top: 85px;
+                right: 20px;
+                background-color: white;
+                flex-direction: column;
+                width: 220px;
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .menu.active{
+                display: flex;
+            }
+
+            .menu-mobile{
+                display: flex;
+            }
+
+            .section-title{
+                font-size: 32px;
+            }
+
+            .hero-text h1{
+                font-size: 34px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <a href="#"
+           class="logo">
+
+            <img src="img/logo.png"
+                 alt="Logo Doces Sonhos">
+
+        </a>
+
+        <nav class="menu"
+             id="menu">
+
+            <a href="principal.html">Produtos</a>
+            <a href="#historia">Nossa História</a>
+            <a href="unidades.html">Unidades</a>
+
+        </nav>
+
+        <div class="menu-mobile"
+             id="menu-mobile">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+<main class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <h1>Confeitaria artesanal feita com paixão.</h1>
+
+            <p>
+                Criamos doces finos, pães artesanais e experiências únicas
+                para transformar momentos simples em memórias especiais.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#produtos"
+                   class="btn btn-primary">
+
+                    Ver ofertas do dia
+
+                </a>
+
+                <a href="#historia"
+                   class="btn btn-secondary">
+
+                    Conheça nossa história
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-video">
+
+            <video controls
+                   disablepictureinpicture
+                   controlsList="nodownload">
+
+                <source src="video/video1.mp4"
+                        type="video/mp4">
+
+            </video>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+<!-- PRODUTOS -->
+
+<section class="produtos"
+         id="produtos">
+
+    <div class="container">
+
+        <h2 class="section-title">Promoções do Dia</h2>
+
+        <p class="section-subtitle">
+            Produtos artesanais preparados diariamente.
+        </p>
+
+        <div class="container-produtos">
+
+            <article class="produto">
+
+                <img src="img/macarons2.jpg"
+                     alt="Macarons">
+
+                <div class="produto-info">
+
+                    <h3 class="produto-nome">
+                        Macarons (4 un)
+                    </h3>
+
+                    <p class="produto-descricao">
+                        Macarons delicados com recheios artesanais.
+                    </p>
+
+                    <div class="produto-footer">
+
+                            <span class="produto-preco">
+                                R$ 12,90
+                            </span>
+
+                        <a href="https://web.whatsapp.com/"
+                           class="btn-comprar">
+
+                            Comprar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="produto">
+
+                <img src="img/torta.jpg"
+                     alt="Torta de maçã">
+
+                <div class="produto-info">
+
+                    <h3 class="produto-nome">
+                        Torta de Maçã
+                    </h3>
+
+                    <p class="produto-descricao">
+                        Receita clássica com massa amanteigada e maçãs selecionadas.
+                    </p>
+
+                    <div class="produto-footer">
+
+                            <span class="produto-preco">
+                                R$ 52,00
+                            </span>
+
+                        <a href="https://web.whatsapp.com/"
+                           class="btn-comprar">
+
+                            Comprar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="produto">
+
+                <img src="img/paes.jpg"
+                     alt="Pão artesanal">
+
+                <div class="produto-info">
+
+                    <h3 class="produto-nome">
+                        Pão Artesanal
+                    </h3>
+
+                    <p class="produto-descricao">
+                        Produzido lentamente para garantir sabor e maciez.
+                    </p>
+
+                    <div class="produto-footer">
+
+                            <span class="produto-preco">
+                                R$ 10,00
+                            </span>
+
+                        <a href="https://web.whatsapp.com/"
+                           class="btn-comprar">
+
+                            Comprar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HISTÓRIA -->
+
+<section class="historia"
+         id="historia">
+
+    <div class="container historia-content">
+
+        <div class="historia-texto">
+
+            <h2>Nossa História</h2>
+
+            <p>
+                Há mais de 12 anos, a Doces Sonhos nasceu como uma pequena
+                confeitaria familiar no interior de São Paulo. Com o tempo,
+                nossa paixão pela confeitaria artesanal conquistou clientes
+                e expandiu nossa presença para importantes regiões da capital,
+                incluindo Paulista, Faria Lima e Brooklin.
+                <br><br>
+
+                Trabalhamos com ingredientes selecionados, receitas exclusivas
+                e atenção aos mínimos detalhes para entregar produtos que unem
+                sabor, sofisticação e memória afetiva.
+                <br><br>
+
+                Hoje, seguimos criando experiências especiais através da
+                confeitaria, sempre preservando o cuidado artesanal que faz
+                parte da nossa essência. <br><br>
+
+                <i>A confeitaria deve ser leve como uma nuvem, mas perfeita em cada detalhe.”
+                </i>   — Gaston Lenôtre
+            </p>
+
+        </div>
+
+        <div class="historia-imagem">
+
+            <img src="img/padaria.jpg"
+                 alt="Equipe da Doces Sonhos">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contato">
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+
+            <h3>Fale Conosco</h3>
+
+            <p>contato@docesonhos.com</p>
+            <p>(11) 99999-9999</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h4>Unidades</h4>
+
+            <p>Paulista</p>
+            <p>Faria Lima</p>
+            <p>Brooklin</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h4>Franquias</h4>
+
+            <p>
+                Tenha uma franquia Doces Sonhos e leve nossa experiência
+                artesanal para sua cidade.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Doces Sonhos. Todos os direitos reservados.
+
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    // MENU MOBILE
+
+    const menuMobile = document.getElementById('menu-mobile');
+    const menu = document.getElementById('menu');
+
+    menuMobile.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+</script>
+
+</body>
+</html>
