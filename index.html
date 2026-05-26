@@ -26,8 +26,399 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
 
-    <!--CSS -->
-    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-color: #f6f3f1;
+            color: #2b2b2b;
+        }
+
+        img{
+            max-width: 100%;
+            display: block;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header{
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .header-content{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+
+        .logo img{
+            width: 155px;
+            transition: 0.3s ease;
+        }
+
+        .logo img:hover{
+            transform: scale(1.03);
+        }
+
+        /* MENU */
+
+        .menu{
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .menu a{
+            color: #5a2c2c;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            transition: 0.3s ease;
+        }
+
+        .menu a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #8B3A3A;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover::after{
+            width: 100%;
+        }
+
+        .menu-mobile{
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-mobile span{
+            width: 28px;
+            height: 3px;
+            background-color: #5a2c2c;
+            border-radius: 10px;
+        }
+
+        .hero{
+            padding: 70px 0;
+        }
+
+        .hero-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text h1{
+            font-size: 52px;
+            line-height: 1.1;
+            color: #4a1f1f;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p{
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons{
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn{
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary{
+            background-color: #8B3A3A;
+            color: white;
+        }
+
+        .btn-primary:hover{
+            background-color: #6f2d2d;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary{
+            border: 2px solid #8B3A3A;
+            color: #8B3A3A;
+        }
+
+        .btn-secondary:hover{
+            background-color: #8B3A3A;
+            color: white;
+        }
+
+        .hero-video video{
+            width: 100%;
+            border-radius: 22px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+        }
+
+        .frase{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Produtos */
+
+        .produtos{
+            padding: 90px 0;
+        }
+
+        .section-title{
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 40px;
+            color: #4a1f1f;
+        }
+
+        .section-subtitle{
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .container-produtos{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .produto{
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: 0.3s ease;
+        }
+
+        .produto:hover{
+            transform: translateY(-8px);
+        }
+
+        .produto img{
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .produto-info{
+            padding: 22px;
+        }
+
+        .produto-nome{
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .produto-descricao{
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .produto-footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .produto-preco{
+            font-size: 24px;
+            font-weight: 700;
+            color: #8B3A3A;
+        }
+
+        .btn-comprar{
+            padding: 10px 20px;
+            background-color: #8B3A3A;
+            color: white;
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+
+        .btn-comprar:hover{
+            background-color: #6f2d2d;
+        }
+
+        /* HISTÓRIA */
+
+        .historia{
+            padding: 90px 0;
+            background-color: white;
+        }
+
+        .historia-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .historia-texto h2{
+            font-size: 38px;
+            color: #4a1f1f;
+            margin-bottom: 25px;
+        }
+
+        .historia-texto p{
+            line-height: 1.9;
+            text-align: justify;
+            color: #555;
+        }
+
+        .historia-imagem img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* FOOTER */
+
+        footer{
+            background-color: #2e1b1b;
+            color: white;
+            padding: 50px 20px 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-box h3,
+        .footer-box h4{
+            margin-bottom: 15px;
+        }
+
+        .footer-box p,
+        .footer-box a{
+            color: #d8d8d8;
+            line-height: 1.8;
+        }
+
+        .footer-bottom{
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bcbcbc;
+            font-size: 14px;
+        }
+
+
+        /* Responsividade */
+
+        @media(max-width: 900px){
+
+            .hero-content,
+            .historia-content{
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text{
+                text-align: center;
+            }
+
+            .hero-buttons{
+                justify-content: center;
+            }
+
+            .hero-text h1{
+                font-size: 40px;
+            }
+
+            .historia-texto h2{
+                text-align: center;
+            }
+        }
+
+        @media(max-width: 768px){
+
+            .menu{
+                position: absolute;
+                top: 85px;
+                right: 20px;
+                background-color: white;
+                flex-direction: column;
+                width: 220px;
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .menu.active{
+                display: flex;
+            }
+
+            .menu-mobile{
+                display: flex;
+            }
+
+            .section-title{
+                font-size: 32px;
+            }
+
+            .hero-text h1{
+                font-size: 34px;
+            }
+        }
+
+    </style>
+
+
 
 </head>
 
@@ -353,3 +744,4 @@
 
 </body>
 </html>
+

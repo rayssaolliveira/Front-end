@@ -1,385 +1,59 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-
-    <title>Pagina</title>
-
-    <!-- GOOGLE FONTS -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagina</title> <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-
-    <!--CSS -->
+          rel="stylesheet"> <!--CSS -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body{
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f8f8;
-        }
-
-        /* TOPO */
-
-        .topo{
-            background-color: white;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 18px 60px;
-
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .logo img{
-            width: 120px;
-        }
-
-        /* MENU */
-
-        .menu{
-            display: flex;
-            gap: 40px;
-        }
-
-        .menu a{
-            color: #5a2c2c;
-            text-decoration: none;
-
-            font-size: 17px;
-            font-weight: 500;
-
-            transition: 0.3s ease;
-
-            position: relative;
-        }
-
-        .menu a::after{
-            content: '';
-            position: absolute;
-
-            left: 0;
-            bottom: -5px;
-
-            width: 0;
-            height: 2px;
-
-            background-color: #8B3A3A;
-
-            transition: 0.3s ease;
-        }
-
-        .menu a:hover::after{
-            width: 100%;
-        }
-
-        /* PRODUTOS */
-
-        .container-produtos{
-            margin-top: 60px;
-
-            display: flex;
-            justify-content: center;
-            gap: 55px;
-            flex-wrap: wrap;
-
-            padding: 0 20px;
-        }
-
-        .produto{
-            width: 280px;
-            padding: 20px;
-
-            text-align: center;
-
-            background-color: white;
-
-            border-radius: 26px;
-
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-
-            transition: 0.3s ease;
-        }
-
-        .produto:hover{
-            transform: translateY(-5px);
-        }
-
-        .produto img{
-            width: 100%;
-            height: 250px;
-
-            object-fit: cover;
-
-            border-radius: 12px;
-        }
-
-        .produto-nome{
-            margin-top: 15px;
-
-            font-size: 20px;
-            font-weight: 500;
-        }
-
-        .produto-preco{
-            margin-top: 5px;
-
-            font-size: 24px;
-            font-weight: 700;
-
-            color: #8B3A3A;
-        }
-
-        .btn-comprar{
-            display: inline-block;
-
-            margin-top: 15px;
-            padding: 12px 28px;
-
-            background-color: #8B3A3A;
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 10px;
-
-            font-weight: 500;
-
-            transition: 0.3s ease;
-        }
-
-        .btn-comprar:hover{
-            background-color: #6f2d2d;
-        }
-
-        /* RODAPÉ */
-
-        footer{
-            margin-top: 80px;
-
-            background-color: #8B3A3A;
-
-            padding: 35px 20px;
-
-            text-align: center;
-
-            color: white;
-        }
-
-        footer p{
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-
+        *{ margin: 0; padding: 0; box-sizing: border-box; } body{ font-family: 'Poppins', sans-serif; background-color: #f8f8f8; } /* TOPO */ .topo{ background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 18px 60px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); } .logo img{ width: 120px; } /* MENU */ .menu{ display: flex; gap: 40px; } .menu a{ color: #5a2c2c; text-decoration: none; font-size: 17px; font-weight: 500; transition: 0.3s ease; position: relative; } .menu a::after{ content: ''; position: absolute; left: 0; bottom: -5px; width: 0; height: 2px; background-color: #8B3A3A; transition: 0.3s ease; } .menu a:hover::after{ width: 100%; } /* PRODUTOS */ .container-produtos{ margin-top: 60px; display: flex; justify-content: center; gap: 55px; flex-wrap: wrap; padding: 0 20px; } .produto{ width: 280px; padding: 20px; text-align: center; background-color: white; border-radius: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s ease; } .produto:hover{ transform: translateY(-5px); } .produto img{ width: 100%; height: 250px; object-fit: cover; border-radius: 12px; } .produto-nome{ margin-top: 15px; font-size: 20px; font-weight: 500; } .produto-preco{ margin-top: 5px; font-size: 24px; font-weight: 700; color: #8B3A3A; } .btn-comprar{ display: inline-block; margin-top: 15px; padding: 12px 28px; background-color: #8B3A3A; color: white; text-decoration: none; border-radius: 10px; font-weight: 500; transition: 0.3s ease; } .btn-comprar:hover{ background-color: #6f2d2d; } /* RODAPÉ */ footer{ margin-top: 80px; background-color: #8B3A3A; padding: 35px 20px; text-align: center; color: white; } footer p{ margin-bottom: 8px; font-size: 15px; }
     </style>
-
 </head>
-
 <body>
-
 <header class="topo">
-
-    <div class="logo">
-
-        <img src="img/logo.png"
-             alt="Logo Doces Sonhos">
-
-    </div>
-
-    <nav class="menu">
-
-        <a href="index.html">Home</a>
-        <a href="unidades.html">Unidades</a>
-
-    </nav>
-
+    <div class="logo"><img src="img/logo.png" alt="Logo Doces Sonhos"></div>
+    <nav class="menu"><a href="index.html">Home</a> <a href="unidades.html">Unidades</a></nav>
 </header>
-
-<p style="text-align: center;
-          font-size: 32px;
-          margin-top: 26px;
-          font-weight: 600">
-
-    <b>PRODUTOS</b>
-
-</p>
-
+<p style="text-align: center; font-size: 32px; margin-top: 26px; font-weight: 600"><b>PRODUTOS</b></p>
 <div class="container-produtos">
-
-    <article class="produto">
-
-        <img src="img/rocambole.jpg">
-
+    <article class="produto"><img src="img/rocambole.jpg">
         <h3 class="produto-nome">Rocambole</h3>
-
-        <p class="produto-preco">R$ 16,90</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
-    <article class="produto">
-
-        <img src="img/image.jpg">
-
-        <h3 class="produto-nome">Bolos</h3>
-
-        <small>Consultar sabores disponíveis</small>
-
-        <p class="produto-preco">R$ 52,00</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
-    <article class="produto">
-
-        <img src="img/croissant.jpg">
-
+        <p class="produto-preco">R$ 16,90</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
+    <article class="produto"><img src="img/image.jpg">
+        <h3 class="produto-nome">Bolos</h3> <small>Consultar sabores disponíveis</small>
+        <p class="produto-preco">R$ 52,00</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
+    <article class="produto"><img src="img/croissant.jpg">
         <h3 class="produto-nome">Croissant</h3>
-
-        <p class="produto-preco">R$ 10,00</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
-    <article class="produto">
-
-        <img src="img/eclair.jpg">
-
+        <p class="produto-preco">R$ 10,00</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
+    <article class="produto"><img src="img/eclair.jpg">
         <h3 class="produto-nome">Eclair (2 un)</h3>
-
-        <p class="produto-preco">R$ 16,00</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
-    <article class="produto">
-
-        <img src="img/tartalete.jpg">
-
+        <p class="produto-preco">R$ 16,00</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
+    <article class="produto"><img src="img/tartalete.jpg">
         <h3 class="produto-nome">Tartalletes (2 un)</h3>
-
-        <p class="produto-preco">R$ 20,00</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
-    <article class="produto">
-
-        <img src="img/esfiha.jpg">
-
+        <p class="produto-preco">R$ 20,00</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
+    <article class="produto"><img src="img/esfiha.jpg">
         <h3 class="produto-nome">Esfiha</h3>
-
-        <p class="produto-preco">R$ 8,00</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
-    <article class="produto">
-
-        <img src="img/empada.jpg">
-
+        <p class="produto-preco">R$ 8,00</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
+    <article class="produto"><img src="img/empada.jpg">
         <h3 class="produto-nome">Empada de frango</h3>
-
-        <p class="produto-preco">R$ 7,00</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
-    <article class="produto">
-
-        <img src="img/paes.jpg">
-
+        <p class="produto-preco">R$ 7,00</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
+    <article class="produto"><img src="img/paes.jpg">
         <h3 class="produto-nome">Pão Artesanal</h3>
-
-        <p class="produto-preco">R$ 18,00</p>
-
-        <a class="btn-comprar"
-           href="https://web.whatsapp.com/"
-           target="_blank">
-
-            Comprar
-
-        </a>
-
-    </article>
-
+        <p class="produto-preco">R$ 18,00</p> <a class="btn-comprar" href="https://web.whatsapp.com/" target="_blank">
+            Comprar </a></article>
 </div>
-
-<footer>
-
-    <p>(11) 99999-9999</p>
-
-    <p>contato@docessonhos.com</p>
-
-</footer>
-
+<footer><p>(11) 99999-9999</p>
+    <p>contato@docessonhos.com</p></footer>
 </body>
 </html>
